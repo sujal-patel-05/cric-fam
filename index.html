@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Turf Cricket Championship | Cricket Fam Official Hub</title>
+  
+  <!-- Primary Meta Tags & Social Sharing (WhatsApp / Facebook / Twitter) -->
+  <meta name="title" content="Turf Cricket Championship 2026 • Cricket Fam">
+  <meta name="description" content="Official tournament portal: 5 Franchises, 10 High-Octane Turf Matches, Live Squad Rosters & Fan Poll. 14th November at 9:00 PM.">
+  <meta name="theme-color" content="#070B14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- Open Graph / WhatsApp Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cricketfam-turf.netlify.app/">
+  <meta property="og:title" content="Turf Cricket Championship 2026 • Cricket Fam">
+  <meta property="og:description" content="10 Matches • 5 Franchises • 1 Grand Trophy. Live countdown to 14th November 9:00 PM!">
+  <meta property="og:image" content="poster/Cricket Fam Turf Championship Schedule.png">
+
+  <!-- SVG Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23070B14'/><path d='M30 25H70V45C70 58 58 68 50 70C42 68 30 58 30 45V25Z' fill='%23FFD13B'/><circle cx='50' cy='42' r='8' fill='%2300F59B'/><path d='M42 70H58V85H42Z' fill='%23FFD13B'/><rect x='32' y='85' width='36' height='7' rx='3' fill='%23FFD13B'/></svg>">
+
+  <!-- The Hundred & IPL Inspired Sports Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Official Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Stadium Shaders & Mesh FX -->
+  <div class="stadium-bg"></div>
+  <div class="stadium-lights"></div>
+  <div class="stadium-mesh"></div>
+
+  <!-- ===================================================================
+       1. TOP FRANCHISE BAR (THE HUNDRED / IPL SIGNATURE STRIP)
+       =================================================================== -->
+  <div class="franchise-topbar">
+    <div class="container franchise-bar-inner">
+      <div class="franchise-bar-title">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        FRANCHISES
+      </div>
+
+      <div class="franchise-teams-strip">
+        <a class="franchise-chip" data-team="MM" onclick="openTeamModal('MM')">
+          <span class="franchise-mini-logo">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M50 12L62 30L82 22L75 48H25L18 22L38 30L50 12Z" fill="#38BDF8"/><path d="M22 82L35 38H45L50 56L55 38H65L78 82H64L58 56L53 74H47L42 56L36 82H22Z" fill="#00A3FF"/></svg>
+          </span>
+          <span class="franchise-chip-code">MM</span>
+          <span>Megha Marvels</span>
+        </a>
+
+        <a class="franchise-chip" data-team="AA" onclick="openTeamModal('AA')">
+          <span class="franchise-mini-logo">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M50 10L18 85H36L44 65H58L50 42L47 52H53L50 42L44 65H56L64 85H82L50 10Z" fill="#EF4444"/><path d="M40 56H88L78 44H48L40 56Z" fill="#FFFFFF"/></svg>
+          </span>
+          <span class="franchise-chip-code">AA</span>
+          <span>Arpita Avengers</span>
+        </a>
+
+        <a class="franchise-chip" data-team="SSS" onclick="openTeamModal('SSS')">
+          <span class="franchise-mini-logo">
+            <svg viewBox="0 0 100 100" fill="none"><circle cx="68" cy="32" r="18" fill="#F97316"/><path d="M26 62L34 50H46L38 62H48L40 76H26L34 64H24L26 62Z" fill="#FFFFFF"/></svg>
+          </span>
+          <span class="franchise-chip-code">SSS</span>
+          <span>Sohi Super Strikers</span>
+        </a>
+
+        <a class="franchise-chip" data-team="HH" onclick="openTeamModal('HH')">
+          <span class="franchise-mini-logo">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M36 34V66M64 34V66M36 50H64" stroke="#06B6D4" stroke-width="12"/></svg>
+          </span>
+          <span class="franchise-chip-code">HH</span>
+          <span>Hitakshi Hurricane</span>
+        </a>
+
+        <a class="franchise-chip" data-team="PP" onclick="openTeamModal('PP')">
+          <span class="franchise-mini-logo">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M30 40H48C56 40 60 46 60 52C60 58 56 64 48 64H38V76H30V40Z" fill="#A855F7"/></svg>
+          </span>
+          <span class="franchise-chip-code">PP</span>
+          <span>Priyansi Power Hitters</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       2. MAIN BROADCAST HEADER & NAVIGATION
+       =================================================================== -->
+  <header class="header">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo / Tournament Crest -->
+      <a href="#hero" class="brand-wrapper">
+        <div class="brand-logo-badge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+            <path d="M4 22h16"/>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-kicker">CRICKET FAM OFFICIAL</span>
+          <span class="brand-main">TURF CHAMPIONSHIP</span>
+        </div>
+      </a>
+
+      <!-- Primary Nav Links -->
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#fixtures" class="nav-link">Fixtures</a></li>
+          <li><a href="#teams" class="nav-link">Teams & Squads</a></li>
+          <li><a href="#standings" class="nav-link">Points Table</a></li>
+          <li><a href="#playoffs" class="nav-link">Playoffs</a></li>
+          <li><a href="#fanzone" class="nav-link">Fan Zone</a></li>
+          <li><a href="#posters" class="nav-link">Posters</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        
+        <!-- The Hundred / IPL Style Match Center CTA -->
+        <a href="#fixtures" class="btn-match-centre">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Match Centre
+        </a>
+
+        <!-- Universal Player Search Bar -->
+        <div class="search-box-wrapper" style="position: relative;">
+          <input 
+            type="text" 
+            id="universalSearch" 
+            placeholder="Search players & teams..." 
+            style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; padding: 8px 14px 8px 34px; font-size: 0.82rem; outline: none; width: 180px; transition: width 0.3s ease;"
+            onfocus="this.style.width='220px'; this.style.borderColor='var(--turf-green)'"
+            onblur="if(!this.value) { this.style.width='180px'; this.style.borderColor='var(--border-subtle)' }"
+          />
+          <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-muted);" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <div id="searchResults" style="display: none; position: absolute; top: calc(100% + 8px); right: 0; width: 280px; background: #0c1220; border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md); box-shadow: 0 15px 35px rgba(0,0,0,0.8); z-index: 200; max-height: 320px; overflow-y: auto;"></div>
+        </div>
+
+        <!-- Sound FX Audio Toggle -->
+        <button class="btn-icon" id="soundToggleBtn" title="Toggle Stadium Sound FX" aria-label="Toggle Sound">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Nav Hamburger -->
+        <button class="btn-icon mobile-nav-toggle" id="mobileToggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       3. HORIZONTAL MATCH TICKER (IPL / THE HUNDRED BROADCAST RIBBON)
+       =================================================================== -->
+  <div class="ticker-bar" id="tickerBar">
+    <div class="ticker-inner">
+      <div class="ticker-label-badge">
+        <span class="ticker-live-dot"></span>
+        <span>MATCHDAY</span>
+      </div>
+      <!-- Dynamically Populated by app.js (All 10 Matches) -->
+      <div class="ticker-scroll-area" id="matchTickerArea"></div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       4. NEW BROADCAST HERO STAGE (IPL / THE HUNDRED STYLE)
+       =================================================================== -->
+  <section class="hero-broadcast-stage" id="hero">
+    <div class="container">
+      <div class="hero-main-banner">
+        
+        <div class="hero-stage-grid">
+          
+          <!-- Narrative Left Column -->
+          <div class="hero-stage-text">
+            <div class="hero-kicker-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              THE ULTIMATE TURF ARENA • SEASON 2026
+            </div>
+
+            <h1 class="hero-super-title">
+              TURF CRICKET <br>
+              <span class="glow-highlight">CHAMPIONSHIP</span>
+            </h1>
+
+            <p class="hero-lead-text">
+              Organized by <strong>Cricket Fam</strong>. 5 powerhouse franchises clash in 10 intense round-robin fixtures for a coveted spot in the Grand Final. Speed, skill, and pure turf fireworks.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#fixtures" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Explore 10 Fixtures
+              </a>
+              <a href="#teams" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Franchise Squads
+              </a>
+            </div>
+
+            <!-- Key Tournament Stats Ribbon -->
+            <div class="hero-stats-deck">
+              <div class="hero-stat-box">
+                <span class="hero-stat-digit green">5</span>
+                <span class="hero-stat-desc">Franchises</span>
+              </div>
+              <div class="hero-stat-box">
+                <span class="hero-stat-digit">10</span>
+                <span class="hero-stat-desc">Matches</span>
+              </div>
+              <div class="hero-stat-box">
+                <span class="hero-stat-digit">35</span>
+                <span class="hero-stat-desc">Elite Athletes</span>
+              </div>
+              <div class="hero-stat-box">
+                <span class="hero-stat-digit gold">1</span>
+                <span class="hero-stat-desc">Grand Trophy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Centerpiece Arena Clash Card (Match 1: Megha Marvels vs Hitakshi Hurricane) -->
+          <div class="hero-arena-clash-card">
+            <div class="clash-card-header">
+              <span class="clash-match-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                TOURNAMENT OPENER • 14TH NOVEMBER • 9:00 PM
+              </span>
+              <span class="clash-venue-badge">Cricket Fam Turf Arena</span>
+            </div>
+
+            <!-- Teams Faceoff -->
+            <div class="clash-teams-arena">
+              
+              <!-- Team MM -->
+              <div class="clash-team-side team-mm">
+                <div class="clash-emblem-aura">
+                  <svg viewBox="0 0 100 100" fill="none" style="width: 100%; height: 100%;">
+                    <path d="M50 12L62 30L82 22L75 48H25L18 22L38 30L50 12Z" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
+                    <path d="M22 82L35 38H45L50 56L55 38H65L78 82H64L58 56L53 74H47L42 56L36 82H22Z" fill="#00A3FF" stroke="#FFFFFF" stroke-width="2"/>
+                  </svg>
+                </div>
+                <h3 class="clash-team-name">Megha Marvels</h3>
+                <span class="clash-team-captain">Capt: Krunal Gandhi</span>
+              </div>
+
+              <!-- VS Badge -->
+              <div class="clash-center-vs">
+                <span class="vs-flame-badge">VS</span>
+                <span class="clash-overs-label">MATCH 1</span>
+              </div>
+
+              <!-- Team HH -->
+              <div class="clash-team-side team-hh">
+                <div class="clash-emblem-aura">
+                  <svg viewBox="0 0 100 100" fill="none" style="width: 100%; height: 100%;">
+                    <path d="M50 10C27.9 10 10 27.9 10 50C10 72.1 27.9 90 50 90C72.1 90 90 72.1 90 50" stroke="#06B6D4" stroke-width="4" stroke-dasharray="8 4"/>
+                    <path d="M28 28C38 18 64 16 74 30C82 42 76 60 62 66C48 72 34 82 44 92" stroke="#8B5CF6" stroke-width="4.5" stroke-linecap="round"/>
+                    <path d="M36 34V66M64 34V66M36 50H64" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="clash-team-name">Hitakshi Hurricane</h3>
+                <span class="clash-team-captain">Capt: Saurabh Desai</span>
+              </div>
+
+            </div>
+
+            <!-- Matchday Countdown Ticker -->
+            <div class="clash-countdown-deck">
+              <div class="countdown-unit">
+                <span class="countdown-num" id="cdDays">00</span>
+                <span class="countdown-txt">Days</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-num" id="cdHours">00</span>
+                <span class="countdown-txt">Hours</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-num" id="cdMins">00</span>
+                <span class="countdown-txt">Mins</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-num" id="cdSecs">00</span>
+                <span class="countdown-txt">Secs</span>
+              </div>
+            </div>
+
+            <!-- Action CTA -->
+            <a href="#fixtures" class="btn btn-primary btn-full">
+              View Tournament Schedule
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       5. FRANCHISE DOCK SHOWCASE (BELOW HERO)
+       =================================================================== -->
+  <section class="franchise-dock-section">
+    <div class="container">
+      <div class="franchise-dock-header">
+        <h3 class="dock-title">Meet The 5 Franchises</h3>
+        <span style="font-size: 0.8rem; color: var(--turf-green); font-weight: 700;">Click any franchise to view roster</span>
+      </div>
+      <!-- Populated by app.js -->
+      <div class="franchise-dock-grid" id="franchiseDockGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       6. FIXTURES & SCHEDULE SECTION
+       =================================================================== -->
+  <section class="section" id="fixtures">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-intro">
+          <span class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Complete Schedule
+          </span>
+          <h2 class="section-title">Tournament Fixtures</h2>
+          <p class="section-desc">Track all 10 championship clashes between our 5 elite franchises. Click on any match for head-to-head records and live match simulator.</p>
+        </div>
+
+        <!-- Team Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="ALL">All Matches</button>
+          <button class="filter-btn" data-filter="MM">MM</button>
+          <button class="filter-btn" data-filter="AA">AA</button>
+          <button class="filter-btn" data-filter="SSS">SSS</button>
+          <button class="filter-btn" data-filter="HH">HH</button>
+          <button class="filter-btn" data-filter="PP">PP</button>
+        </div>
+      </div>
+
+      <!-- Fixtures Grid Generated by app.js -->
+      <div class="fixtures-grid" id="fixturesContainer"></div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       7. TEAMS & DEEP DIVE SQUADS SECTION
+       =================================================================== -->
+  <section class="section" id="teams">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-intro">
+          <span class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Franchise Hub
+          </span>
+          <h2 class="section-title">Participating Teams & Squads</h2>
+          <p class="section-desc">Click any team card to deep dive into their full 7-player roster, captain details, batting styles, and specialized turf roles.</p>
+        </div>
+      </div>
+
+      <!-- Teams Grid Generated by app.js -->
+      <div class="teams-grid" id="teamsGrid"></div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       8. STANDINGS / POINTS TABLE
+       =================================================================== -->
+  <section class="section" id="standings">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-intro">
+          <span class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            League Rankings
+          </span>
+          <h2 class="section-title">Points Table & Qualification</h2>
+          <p class="section-desc">Top team locks direct passage to the Grand Final. 2nd & 3rd place battle in the high-stakes Semi-Final playoff.</p>
+        </div>
+      </div>
+
+      <div class="standings-container">
+        <div class="table-responsive">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th>Franchise Team</th>
+                <th>P</th>
+                <th>W</th>
+                <th>L</th>
+                <th>PTS</th>
+                <th>NRR</th>
+                <th>Recent Form</th>
+              </tr>
+            </thead>
+            <tbody id="standingsTableBody">
+              <!-- Dynamically populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="standings-legend">
+          <div class="legend-item">
+            <span class="legend-indicator indicator-gold"></span>
+            <span><strong>1st Place:</strong> Qualifies directly for the Grand Final</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-indicator indicator-blue"></span>
+            <span><strong>2nd & 3rd Place:</strong> Advance to Semi-Final Elimination</span>
+          </div>
+          <div class="legend-item" style="margin-left: auto;">
+            <span>Win = 2 Pts • Loss = 0 Pts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       9. PLAYOFFS BRACKET VISUALIZER (From Poster 2)
+       =================================================================== -->
+  <section class="section playoffs-section" id="playoffs">
+    <div class="container">
+      
+      <div class="section-header" style="text-align: center; justify-content: center;">
+        <div class="section-intro" style="text-align: center; margin: 0 auto;">
+          <span class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            Road To Glory
+          </span>
+          <h2 class="section-title">Playoffs & Grand Final Road</h2>
+          <p class="section-desc">Accredited tournament format designed for maximum drama and turf intensity.</p>
+        </div>
+      </div>
+
+      <div class="bracket-wrapper">
+        
+        <!-- Semi-Final Card -->
+        <div class="bracket-stage-card">
+          <span class="stage-badge semi">Semi-Final Knockout</span>
+          
+          <div class="bracket-team-slot">
+            <div class="bracket-team-label">
+              <span class="bracket-seed">SEED #2</span>
+              <span class="bracket-name">2nd Place League</span>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--turf-green); font-weight: 700;">TBD</span>
+          </div>
+
+          <div style="text-align: center; margin: 6px 0;">
+            <span class="vs-flame-badge" style="font-size: 0.75rem; padding: 2px 8px;">VS</span>
+          </div>
+
+          <div class="bracket-team-slot">
+            <div class="bracket-team-label">
+              <span class="bracket-seed">SEED #3</span>
+              <span class="bracket-name">3rd Place League</span>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--turf-green); font-weight: 700;">TBD</span>
+          </div>
+
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; text-align: center;">
+            Winner advances to the Grand Final clash
+          </p>
+        </div>
+
+        <!-- Flow Connector -->
+        <div class="bracket-divider">
+          <div class="bracket-arrow">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+
+        <!-- Grand Final Card -->
+        <div class="bracket-stage-card gold-final">
+          <span class="stage-badge final">👑 Grand Championship Final</span>
+
+          <div class="bracket-team-slot highlight">
+            <div class="bracket-team-label">
+              <span class="bracket-seed" style="color: var(--trophy-gold);">SEED #1</span>
+              <span class="bracket-name" style="color: #FFFFFF;">1st Place (Direct Qualifier)</span>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--trophy-gold); font-weight: 800;">FINALS SEED</span>
+          </div>
+
+          <div style="text-align: center; margin: 6px 0;">
+            <span class="vs-flame-badge" style="font-size: 0.75rem; padding: 2px 8px; background: rgba(255,209,59,0.2); color: var(--trophy-gold); border-color: rgba(255,209,59,0.4);">VS</span>
+          </div>
+
+          <div class="bracket-team-slot highlight">
+            <div class="bracket-team-label">
+              <span class="bracket-seed" style="color: var(--turf-green);">SEMI WINNER</span>
+              <span class="bracket-name" style="color: #FFFFFF;">Semi-Final Victor</span>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--turf-green); font-weight: 800;">CHALLENGER</span>
+          </div>
+
+          <p style="font-size: 0.8rem; color: var(--trophy-gold); margin-top: 14px; text-align: center; font-weight: 700;">
+            🏆 Winner is Crowned Turf Champion
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       10. FAN ZONE & PREDICTION POLL
+       =================================================================== -->
+  <section class="section" id="fanzone">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-intro">
+          <span class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Fan Voice
+          </span>
+          <h2 class="section-title">Fan Zone & Title Predictions</h2>
+          <p class="section-desc">Cast your vote for who takes home the Cricket Fam Turf Championship cup!</p>
+        </div>
+      </div>
+
+      <div class="fan-poll-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">Who will win the Turf Championship?</h3>
+            <span style="font-size: 0.82rem; color: var(--text-muted);">Tap a team to cast your vote</span>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--turf-green); font-weight: 700; background: rgba(0,245,155,0.1); padding: 4px 12px; border-radius: var(--radius-full);">Live Voting</span>
+        </div>
+
+        <div class="poll-teams-list" id="pollTeamsContainer">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <!-- Share Tournament Strip -->
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <span style="font-weight: 700; color: #FFFFFF; font-size: 0.9rem; display: block;">Invite Your Cricket Fam & Squad</span>
+            <span style="color: var(--text-muted); font-size: 0.78rem;">Share the official schedule, rosters & live fan poll</span>
+          </div>
+          <button class="btn btn-outline" onclick="shareTournament()" style="padding: 10px 20px; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share Tournament Hub
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       11. OFFICIAL POSTERS GALLERY
+       =================================================================== -->
+  <section class="section" id="posters">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-intro">
+          <span class="section-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Official Media
+          </span>
+          <h2 class="section-title">Championship Posters</h2>
+          <p class="section-desc">View and inspect the original tournament schedule and playoffs release artwork.</p>
+        </div>
+      </div>
+
+      <div class="posters-grid">
+        
+        <!-- Schedule Poster Card -->
+        <div class="poster-preview-card" onclick="openPosterModal('poster/Cricket Fam Turf Championship Schedule.png', 'Official Match Schedule Poster')">
+          <div class="poster-img-container">
+            <img src="poster/Cricket Fam Turf Championship Schedule.png" alt="Cricket Fam Turf Championship Schedule" class="poster-img" loading="lazy">
+            <div class="poster-overlay">
+              <div class="poster-info">
+                <h4>Match Schedule Poster</h4>
+                <p>Tap to view in high resolution & zoom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Playoffs Poster Card -->
+        <div class="poster-preview-card" onclick="openPosterModal('poster/Turf Cricket Championship Playoffs.png', 'Tournament Format & Playoffs Poster')">
+          <div class="poster-img-container">
+            <img src="poster/Turf Cricket Championship Playoffs.png" alt="Turf Cricket Championship Playoffs" class="poster-img" loading="lazy">
+            <div class="poster-overlay">
+              <div class="poster-info">
+                <h4>Playoffs & Format Poster</h4>
+                <p>Tap to view in high resolution & zoom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       12. FOOTER
+       =================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-wrapper">
+            <div class="brand-logo-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <div class="brand-titles">
+              <span class="brand-kicker">CRICKET FAM</span>
+              <span class="brand-main" style="font-size: 1.1rem;">TURF CHAMPIONSHIP</span>
+            </div>
+          </div>
+          <p>
+            The pinnacle of amateur and turf league cricket, delivering the spectacle, passion, and excitement of elite franchise leagues.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Tournament</h5>
+          <ul>
+            <li><a href="#fixtures">Match Schedule</a></li>
+            <li><a href="#teams">Squad Rosters</a></li>
+            <li><a href="#standings">Points Table</a></li>
+            <li><a href="#playoffs">Format & Finals</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Franchises</h5>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="openTeamModal('MM')">Megha Marvels</a></li>
+            <li><a href="javascript:void(0)" onclick="openTeamModal('AA')">Arpita Avengers</a></li>
+            <li><a href="javascript:void(0)" onclick="openTeamModal('SSS')">Sohi Super Strikers</a></li>
+            <li><a href="javascript:void(0)" onclick="openTeamModal('HH')">Hitakshi Hurricane</a></li>
+            <li><a href="javascript:void(0)" onclick="openTeamModal('PP')">Priyansi Power Hitters</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Community</h5>
+          <ul>
+            <li><a href="#fanzone">Fan Zone Polls</a></li>
+            <li><a href="#posters">Official Posters</a></li>
+            <li><a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to Top</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Cricket Fam</strong> • Turf Cricket Championship. All rights reserved.
+        </div>
+        <div>
+          Crafted with Love from Sujal
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       13. MODAL DIALOGS
+       =================================================================== -->
+
+  <!-- 1. Team Deep-Dive Modal -->
+  <div class="modal-backdrop" id="teamModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeTeamModal()" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="teamModalContent"></div>
+    </div>
+  </div>
+
+  <!-- 2. Poster Lightbox Modal -->
+  <div class="modal-backdrop" id="posterLightboxModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 860px; background: #070B14; padding: 24px;">
+      <button class="modal-close-btn" onclick="closePosterModal()" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h3 id="lightboxTitle" style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 16px;">Poster Preview</h3>
+      <div style="width: 100%; max-height: 75vh; overflow: auto; text-align: center; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <img id="lightboxImage" src="" alt="Poster View" style="max-width: 100%; height: auto; display: inline-block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       14. MOBILE BOTTOM APP BAR (THE HUNDRED / IPL MOBILE APP NAVIGATION)
+       =================================================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
+    <a href="#fixtures" class="bottom-nav-item" onclick="closeMobileNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span>Matches</span>
+    </a>
+    
+    <a href="#teams" class="bottom-nav-item" onclick="closeMobileNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      <span>Squads</span>
+    </a>
+
+    <a href="#standings" class="bottom-nav-item" onclick="closeMobileNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+      <span>Table</span>
+    </a>
+
+    <a href="#playoffs" class="bottom-nav-item" onclick="closeMobileNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+      </svg>
+      <span>Playoffs</span>
+    </a>
+
+    <a href="#fanzone" class="bottom-nav-item" onclick="closeMobileNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span>Fan Zone</span>
+    </a>
+  </nav>
+
+  <!-- Global Toast Notification Container -->
+  <div id="globalToast" style="display: none;"></div>
+
+  <!-- Core Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
