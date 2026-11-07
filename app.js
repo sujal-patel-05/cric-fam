@@ -64,7 +64,7 @@ const TEAMS_DATA = {
       { id: "aa-2", name: "Yash Thakkar" },
       { id: "aa-3", name: "Akshat Trevadiya" },
       { id: "aa-4", name: "Golu Bhai" },
-      { id: "aa-5", name: "Raj Bhai" },
+      { id: "aa-5", name: "Raj" },
       { id: "aa-6", name: "Jinal Parmar" },
       { id: "aa-7", name: "Derick" }
     ]
@@ -121,7 +121,7 @@ const TEAMS_DATA = {
       </svg>
     `,
     players: [
-      { id: "hh-1", name: "Shantu" },
+      { id: "hh-1", name: "Senku" },
       { id: "hh-2", name: "Ankit Desai" },
       { id: "hh-3", name: "Soham Naik" },
       { id: "hh-4", name: "Bhavish Desai" },
@@ -690,7 +690,7 @@ function shareTournament() {
   };
 
   if (navigator.share) {
-    navigator.share(shareData).catch(() => {});
+    navigator.share(shareData).catch(() => { });
   } else {
     navigator.clipboard.writeText(window.location.href).then(() => {
       showToast("Tournament link copied to clipboard!");
@@ -748,6 +748,116 @@ function closeMobileNav() {
   }
 }
 
+// ============================================================================
+// 6. THEME SONG MUSIC PLAYER
+// ============================================================================
+
+let musicExpanded = false;
+
+function toggleMusicExpand() {
+  musicExpanded = !musicExpanded;
+  const card = document.getElementById('musicCard');
+  if (card) card.classList.toggle('open', musicExpanded);
+}
+
+function toggleThemeSong() {
+  const audio = document.getElementById('themeSongAudio');
+  const playIcon = document.getElementById('musicPlayIcon');
+  const pauseIcon = document.getElementById('musicPauseIcon');
+  const bars = document.getElementById('musicBars');
+  const noteIcon = document.getElementById('musicNoteIcon');
+  const waveform = document.getElementById('musicWaveform');
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play().then(() => {
+      // Switched to playing
+      if (playIcon) playIcon.style.display = 'none';
+      if (pauseIcon) pauseIcon.style.display = 'block';
+      if (bars) bars.classList.add('active');
+      if (noteIcon) noteIcon.classList.add('hidden');
+      if (waveform) waveform.classList.add('playing');
+    }).catch(() => {
+      showToast('Tap play to start theme song 🎵');
+    });
+  } else {
+    audio.pause();
+    if (playIcon) playIcon.style.display = 'block';
+    if (pauseIcon) pauseIcon.style.display = 'none';
+    if (bars) bars.classList.remove('active');
+    if (noteIcon) noteIcon.classList.remove('hidden');
+    if (waveform) waveform.classList.remove('playing');
+  }
+}
+
+function seekMusic(seconds) {
+  const audio = document.getElementById('themeSongAudio');
+  if (!audio || isNaN(audio.duration)) return;
+  audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + seconds));
+}
+
+function setMusicVolume(val) {
+  const audio = document.getElementById('themeSongAudio');
+  if (audio) audio.volume = parseFloat(val);
+}
+
+function formatMusicTime(secs) {
+  if (isNaN(secs)) return '--:--';
+  const m = Math.floor(secs / 60);
+  const s = Math.floor(secs % 60);
+  return m + ':' + String(s).padStart(2, '0');
+}
+
+function initMusicPlayer() {
+  const audio = document.getElementById('themeSongAudio');
+  const fillEl = document.getElementById('musicProgressFill');
+  const curEl = document.getElementById('musicCurrentTime');
+  const durEl = document.getElementById('musicDuration');
+  const progressBar = document.getElementById('musicProgressBar');
+
+  if (!audio) return;
+
+  // Set initial volume
+  audio.volume = 0.7;
+
+  // Update progress and time displays
+  audio.addEventListener('timeupdate', () => {
+    if (isNaN(audio.duration)) return;
+    const pct = (audio.currentTime / audio.duration) * 100;
+    if (fillEl) fillEl.style.width = pct + '%';
+    if (curEl) curEl.textContent = formatMusicTime(audio.currentTime);
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    if (durEl) durEl.textContent = formatMusicTime(audio.duration);
+  });
+
+  audio.addEventListener('ended', () => {
+    // Loop is set, but handle UI reset if loop is disabled
+    const playIcon = document.getElementById('musicPlayIcon');
+    const pauseIcon = document.getElementById('musicPauseIcon');
+    const bars = document.getElementById('musicBars');
+    const noteIcon = document.getElementById('musicNoteIcon');
+    const waveform = document.getElementById('musicWaveform');
+    if (playIcon) playIcon.style.display = 'block';
+    if (pauseIcon) pauseIcon.style.display = 'none';
+    if (bars) bars.classList.remove('active');
+    if (noteIcon) noteIcon.classList.remove('hidden');
+    if (waveform) waveform.classList.remove('playing');
+    if (fillEl) fillEl.style.width = '0%';
+  });
+
+  // Click on progress bar to seek
+  if (progressBar) {
+    progressBar.addEventListener('click', (e) => {
+      if (isNaN(audio.duration)) return;
+      const rect = progressBar.getBoundingClientRect();
+      const fraction = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = fraction * audio.duration;
+    });
+  }
+}
+
 // Modern Countdown Clock Ticker to Match Day: 14th November at 9:00 PM IST
 function startCountdown() {
   const daysElem = document.getElementById("cdDays");
@@ -797,6 +907,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderStandings();
   renderFanPoll();
   startCountdown();
+  initMusicPlayer();
 
   // Sync live poll with Netlify backend & poll every 10 seconds for live updates
   syncLivePollVotes();
